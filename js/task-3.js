@@ -1,12 +1,12 @@
 function checkForSpam(message) {
-    let prap = false;
-     message = message.toLowerCase();
-    for (let i = 0; i <= message.length - 3; i += 1){
-        if (message.slice(i, i+4)===`spam`||message.slice(i, i+4)===`sale`) {
-            prap = true;
+    let isSpam = false;
+    message = message.toLowerCase();
+
+        if (message.includes("spam")||message.includes("sale")) {
+            isSpam = true;
         }
-    }
-    return prap;
+    
+    return isSpam;
 }
 console.log(checkForSpam("Latest technology news")); // false
 console.log(checkForSpam("JavaScript weekly newsletter")); // false
